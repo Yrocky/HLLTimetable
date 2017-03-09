@@ -204,7 +204,7 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
         
         // Commom data
         CGFloat columnMinY = (section == 0) ? 0.0 : [self stackedSectionHeightUpToSection:section] - margin * section;// 获取当前section的最小y
-        columnMinY += self.signHeaderHeight;
+        if (!needsToPopulateSignHeaderAttributes)  columnMinY += self.signHeaderHeight;
 
         CGFloat calendarGridMinY = (columnMinY + self.contentMargin.top);
         NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
