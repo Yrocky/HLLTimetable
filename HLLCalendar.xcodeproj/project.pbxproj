@@ -7,25 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB8A9FEF23230BBEC0CDA621 /* libPods-HLLCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52897264B4667D9FAE068E71 /* libPods-HLLCalendar.a */; };
+		D73714441E7182B2005B0807 /* HLLEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D73714431E7182B2005B0807 /* HLLEvent.m */; };
+		D73714471E718329005B0807 /* UIColor+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D73714461E718329005B0807 /* UIColor+Common.m */; };
+		D737144A1E718455005B0807 /* NSDate+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D73714491E718455005B0807 /* NSDate+Common.m */; };
 		D768D10E1E7033CC0079CBA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D768D10D1E7033CC0079CBA6 /* main.m */; };
 		D768D1111E7033CC0079CBA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D768D1101E7033CC0079CBA6 /* AppDelegate.m */; };
-		D768D1141E7033CC0079CBA6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D768D1131E7033CC0079CBA6 /* ViewController.m */; };
 		D768D1171E7033CD0079CBA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D768D1151E7033CC0079CBA6 /* Main.storyboard */; };
 		D768D1191E7033CD0079CBA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D768D1181E7033CD0079CBA6 /* Assets.xcassets */; };
 		D768D11C1E7033CD0079CBA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D768D11A1E7033CD0079CBA6 /* LaunchScreen.storyboard */; };
+		D7A80D911E70EB1600EE547F /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A80D901E70EB1600EE547F /* CustomViewController.m */; };
+		D7A80D941E70EC1C00EE547F /* HLLCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A80D931E70EC1C00EE547F /* HLLCollectionViewCalendarLayout.m */; };
+		D7A80D971E70EC7500EE547F /* HLLEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A80D961E70EC7500EE547F /* HLLEventCell.m */; };
+		D7A80D9B1E70EDF700EE547F /* HLLDayRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A80D9A1E70EDF700EE547F /* HLLDayRowHeader.m */; };
+		D7A80D9E1E70EE1D00EE547F /* HLLCurrentDayHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A80D9D1E70EE1D00EE547F /* HLLCurrentDayHeader.m */; };
+		D7A80DA11E70EE3300EE547F /* HLLGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A80DA01E70EE3300EE547F /* HLLGridline.m */; };
+		D7A80DA41E70EE4100EE547F /* HLLSignHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A80DA31E70EE4100EE547F /* HLLSignHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		098367B8784A694453FAD970 /* Pods-HLLCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLLCalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLLCalendar/Pods-HLLCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		11E4F87A15E45780C5439157 /* Pods-HLLCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLLCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLLCalendar/Pods-HLLCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		52897264B4667D9FAE068E71 /* libPods-HLLCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HLLCalendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73714421E7182B2005B0807 /* HLLEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLEvent.h; sourceTree = "<group>"; };
+		D73714431E7182B2005B0807 /* HLLEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLEvent.m; sourceTree = "<group>"; };
+		D73714451E718329005B0807 /* UIColor+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Common.h"; sourceTree = "<group>"; };
+		D73714461E718329005B0807 /* UIColor+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Common.m"; sourceTree = "<group>"; };
+		D73714481E718455005B0807 /* NSDate+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Common.h"; sourceTree = "<group>"; };
+		D73714491E718455005B0807 /* NSDate+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Common.m"; sourceTree = "<group>"; };
 		D768D1091E7033CC0079CBA6 /* HLLCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLLCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D768D10D1E7033CC0079CBA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D768D10F1E7033CC0079CBA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D768D1101E7033CC0079CBA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D768D1121E7033CC0079CBA6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D768D1131E7033CC0079CBA6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D768D1161E7033CC0079CBA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D768D1181E7033CD0079CBA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D768D11B1E7033CD0079CBA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D768D11D1E7033CD0079CBA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7A80D8F1E70EB1600EE547F /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		D7A80D901E70EB1600EE547F /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
+		D7A80D921E70EC1C00EE547F /* HLLCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
+		D7A80D931E70EC1C00EE547F /* HLLCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
+		D7A80D951E70EC7500EE547F /* HLLEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLEventCell.h; sourceTree = "<group>"; };
+		D7A80D961E70EC7500EE547F /* HLLEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLEventCell.m; sourceTree = "<group>"; };
+		D7A80D991E70EDF700EE547F /* HLLDayRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLDayRowHeader.h; sourceTree = "<group>"; };
+		D7A80D9A1E70EDF700EE547F /* HLLDayRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLDayRowHeader.m; sourceTree = "<group>"; };
+		D7A80D9C1E70EE1D00EE547F /* HLLCurrentDayHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLCurrentDayHeader.h; sourceTree = "<group>"; };
+		D7A80D9D1E70EE1D00EE547F /* HLLCurrentDayHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLCurrentDayHeader.m; sourceTree = "<group>"; };
+		D7A80D9F1E70EE3300EE547F /* HLLGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLGridline.h; sourceTree = "<group>"; };
+		D7A80DA01E70EE3300EE547F /* HLLGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLGridline.m; sourceTree = "<group>"; };
+		D7A80DA21E70EE4100EE547F /* HLLSignHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLLSignHeader.h; sourceTree = "<group>"; };
+		D7A80DA31E70EE4100EE547F /* HLLSignHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLLSignHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +64,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB8A9FEF23230BBEC0CDA621 /* libPods-HLLCalendar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DCF8C3A127EFA81FBCEBBE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52897264B4667D9FAE068E71 /* libPods-HLLCalendar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D737144B1E71896A005B0807 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				D73714451E718329005B0807 /* UIColor+Common.h */,
+				D73714461E718329005B0807 /* UIColor+Common.m */,
+				D73714481E718455005B0807 /* NSDate+Common.h */,
+				D73714491E718455005B0807 /* NSDate+Common.m */,
+			);
+			name = category;
+			sourceTree = "<group>";
+		};
+		D737144C1E718972005B0807 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D73714421E7182B2005B0807 /* HLLEvent.h */,
+				D73714431E7182B2005B0807 /* HLLEvent.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		D737144D1E718AA9005B0807 /* layout */ = {
+			isa = PBXGroup;
+			children = (
+				D7A80D921E70EC1C00EE547F /* HLLCollectionViewCalendarLayout.h */,
+				D7A80D931E70EC1C00EE547F /* HLLCollectionViewCalendarLayout.m */,
+			);
+			name = layout;
+			sourceTree = "<group>";
+		};
 		D768D1001E7033CC0079CBA6 = {
 			isa = PBXGroup;
 			children = (
 				D768D10B1E7033CC0079CBA6 /* HLLCalendar */,
 				D768D10A1E7033CC0079CBA6 /* Products */,
+				E5AC2BAAF824AC6B3CC10F56 /* Pods */,
+				0DCF8C3A127EFA81FBCEBBE6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,9 +131,13 @@
 			children = (
 				D768D10F1E7033CC0079CBA6 /* AppDelegate.h */,
 				D768D1101E7033CC0079CBA6 /* AppDelegate.m */,
-				D768D1121E7033CC0079CBA6 /* ViewController.h */,
-				D768D1131E7033CC0079CBA6 /* ViewController.m */,
+				D7A80D8F1E70EB1600EE547F /* CustomViewController.h */,
+				D7A80D901E70EB1600EE547F /* CustomViewController.m */,
 				D768D1151E7033CC0079CBA6 /* Main.storyboard */,
+				D737144D1E718AA9005B0807 /* layout */,
+				D737144B1E71896A005B0807 /* category */,
+				D737144C1E718972005B0807 /* model */,
+				D7A80D981E70EC7C00EE547F /* cell */,
 				D768D1181E7033CD0079CBA6 /* Assets.xcassets */,
 				D768D11A1E7033CD0079CBA6 /* LaunchScreen.storyboard */,
 				D768D11D1E7033CD0079CBA6 /* Info.plist */,
@@ -79,6 +154,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D7A80D981E70EC7C00EE547F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D7A80D951E70EC7500EE547F /* HLLEventCell.h */,
+				D7A80D961E70EC7500EE547F /* HLLEventCell.m */,
+				D7A80D991E70EDF700EE547F /* HLLDayRowHeader.h */,
+				D7A80D9A1E70EDF700EE547F /* HLLDayRowHeader.m */,
+				D7A80D9C1E70EE1D00EE547F /* HLLCurrentDayHeader.h */,
+				D7A80D9D1E70EE1D00EE547F /* HLLCurrentDayHeader.m */,
+				D7A80D9F1E70EE3300EE547F /* HLLGridline.h */,
+				D7A80DA01E70EE3300EE547F /* HLLGridline.m */,
+				D7A80DA21E70EE4100EE547F /* HLLSignHeader.h */,
+				D7A80DA31E70EE4100EE547F /* HLLSignHeader.m */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		E5AC2BAAF824AC6B3CC10F56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				098367B8784A694453FAD970 /* Pods-HLLCalendar.debug.xcconfig */,
+				11E4F87A15E45780C5439157 /* Pods-HLLCalendar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D768D1201E7033CD0079CBA6 /* Build configuration list for PBXNativeTarget "HLLCalendar" */;
 			buildPhases = (
+				CE7DF9840428F566E25EE8E3 /* [CP] Check Pods Manifest.lock */,
 				D768D1051E7033CC0079CBA6 /* Sources */,
 				D768D1061E7033CC0079CBA6 /* Frameworks */,
 				D768D1071E7033CC0079CBA6 /* Resources */,
+				C1588BE3FBCC74D3B123897F /* [CP] Embed Pods Frameworks */,
+				E98220D0A9D136A5D27CDCF0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,14 +250,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C1588BE3FBCC74D3B123897F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLLCalendar/Pods-HLLCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE7DF9840428F566E25EE8E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E98220D0A9D136A5D27CDCF0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLLCalendar/Pods-HLLCalendar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D768D1051E7033CC0079CBA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D768D1141E7033CC0079CBA6 /* ViewController.m in Sources */,
+				D7A80D941E70EC1C00EE547F /* HLLCollectionViewCalendarLayout.m in Sources */,
+				D73714471E718329005B0807 /* UIColor+Common.m in Sources */,
+				D7A80DA11E70EE3300EE547F /* HLLGridline.m in Sources */,
 				D768D1111E7033CC0079CBA6 /* AppDelegate.m in Sources */,
+				D7A80D911E70EB1600EE547F /* CustomViewController.m in Sources */,
+				D7A80D971E70EC7500EE547F /* HLLEventCell.m in Sources */,
+				D73714441E7182B2005B0807 /* HLLEvent.m in Sources */,
+				D7A80D9B1E70EDF700EE547F /* HLLDayRowHeader.m in Sources */,
+				D737144A1E718455005B0807 /* NSDate+Common.m in Sources */,
 				D768D10E1E7033CC0079CBA6 /* main.m in Sources */,
+				D7A80D9E1E70EE1D00EE547F /* HLLCurrentDayHeader.m in Sources */,
+				D7A80DA41E70EE4100EE547F /* HLLSignHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +432,7 @@
 		};
 		D768D1211E7033CD0079CBA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 098367B8784A694453FAD970 /* Pods-HLLCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F7S5K3LZ8Z;
@@ -283,6 +445,7 @@
 		};
 		D768D1221E7033CD0079CBA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11E4F87A15E45780C5439157 /* Pods-HLLCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F7S5K3LZ8Z;
@@ -312,6 +475,7 @@
 				D768D1221E7033CD0079CBA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
