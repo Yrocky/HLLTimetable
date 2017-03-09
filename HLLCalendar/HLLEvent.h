@@ -39,12 +39,6 @@ typedef NS_ENUM(NSInteger, HLLEventStatus) {
 
 @end
 
-@interface NSArray (SortForEvent)
-
-- (NSArray *) sortEvent;
-
-@end
-
 @interface HLLWeekDay : NSObject
 
 @property (nonatomic ,strong) NSString * week;
