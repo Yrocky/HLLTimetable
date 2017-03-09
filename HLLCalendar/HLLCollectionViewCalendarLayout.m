@@ -174,6 +174,12 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
     CGFloat itemCommomWidth = (self.collectionView.bounds.size.width - self.dayRowHeaderWidth - self.contentMargin.left - self.contentMargin.right - self.cellMargin.left - self.cellMargin.right - self.sectionMargin.left - self.sectionMargin.right) / 2;
     CGFloat itemCommomHeight = self.dayRowHeaderHeight;
     
+    BOOL needsToPopulateItemAttributes = (self.itemAttributes.count == 0);
+    BOOL needsToPopulateHorizontalGridlineAttributes = (self.horizontalGridlineAttributes.count == 0);
+    BOOL needsToPopulateVerticalGridlineAttributes = (self.verticalGridlineAttributes.count == 0);
+    BOOL needsToPopulateRowHeaderGridlineAttributes = (self.dayRowHeaderGridlineAttributes.count == 0);
+    BOOL needsToPopulateSignHeaderAttributes = (self.signHeaderAttributes.count == 0);
+
     // Current Day Header
     NSIndexPath *currentDayHeaderIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     UICollectionViewLayoutAttributes *currentDayHeaderAttributes = [self layoutAttributesForDecorationViewAtIndexPath:currentDayHeaderIndexPath ofKind:HLLCollectionElementKindCurrentDayHeader withItemCache:self.currentDayHeaderAttributes];
@@ -181,16 +187,14 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
     currentDayHeaderAttributes.frame = CGRectZero;
     
     // Sign Header
-    CGFloat signHeaderMinY = self.stickySignHeader ? MAX(self.collectionView.contentOffset.y, 0) : 0;
-    NSIndexPath * signHeaderIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    UICollectionViewLayoutAttributes * signHeaderAttributes = [self layoutAttributesForDecorationViewAtIndexPath:signHeaderIndexPath ofKind:HLLCollectionElementKindSignHeader withItemCache:self.signHeaderAttributes];
-    signHeaderAttributes.frame = CGRectMake(0, signHeaderMinY, self.collectionView.bounds.size.width, self.signHeaderHeight);
-    signHeaderAttributes.zIndex = [self zIndexForElementKind:HLLCollectionElementKindSignHeader];
-    
-    BOOL needsToPopulateItemAttributes = (self.itemAttributes.count == 0);
-    BOOL needsToPopulateHorizontalGridlineAttributes = (self.horizontalGridlineAttributes.count == 0);
-    BOOL needsToPopulateVerticalGridlineAttributes = (self.verticalGridlineAttributes.count == 0);
-    BOOL needsToPopulateRowHeaderGridlineAttributes = (self.dayRowHeaderGridlineAttributes.count == 0);
+    if (needsToPopulateSignHeaderAttributes) {
+        
+        CGFloat signHeaderMinY = self.stickySignHeader ? MAX(self.collectionView.contentOffset.y, 0) : 0;
+        NSIndexPath * signHeaderIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        UICollectionViewLayoutAttributes * signHeaderAttributes = [self layoutAttributesForDecorationViewAtIndexPath:signHeaderIndexPath ofKind:HLLCollectionElementKindSignHeader withItemCache:self.signHeaderAttributes];
+        signHeaderAttributes.frame = CGRectMake(0, signHeaderMinY, self.collectionView.bounds.size.width, self.signHeaderHeight);
+        signHeaderAttributes.zIndex = [self zIndexForElementKind:HLLCollectionElementKindSignHeader];
+    }
     
     CGFloat calendarGridMinX = (self.dayRowHeaderWidth + self.contentMargin.left);
     CGFloat calendarGridWidth = (self.collectionViewContentSize.width - 0);
@@ -201,6 +205,7 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
         // Commom data
         CGFloat columnMinY = (section == 0) ? 0.0 : [self stackedSectionHeightUpToSection:section] - margin * section;// 获取当前section的最小y
         columnMinY += self.signHeaderHeight;
+
         CGFloat calendarGridMinY = (columnMinY + self.contentMargin.top);
         NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
         
@@ -447,7 +452,9 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
 /** 计算整个CollectionView的堆叠高度 */
 - (CGFloat)stackedSectionHeight
 {
-    return [self stackedSectionHeightUpToSection:self.collectionView.numberOfSections] + self.signHeaderHeight;
+    BOOL needsToPopulateSignHeaderAttributes = (self.signHeaderAttributes.count != 0);
+    
+    return [self stackedSectionHeightUpToSection:self.collectionView.numberOfSections] + (needsToPopulateSignHeaderAttributes ? self.signHeaderHeight : 0);
 }
 /** 计算upToSection之前的所有section的堆叠高度 */
 - (CGFloat)stackedSectionHeightUpToSection:(NSInteger)upToSection
