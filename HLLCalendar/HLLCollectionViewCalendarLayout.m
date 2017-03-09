@@ -178,7 +178,7 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
     BOOL needsToPopulateHorizontalGridlineAttributes = (self.horizontalGridlineAttributes.count == 0);
     BOOL needsToPopulateVerticalGridlineAttributes = (self.verticalGridlineAttributes.count == 0);
     BOOL needsToPopulateRowHeaderGridlineAttributes = (self.dayRowHeaderGridlineAttributes.count == 0);
-    BOOL needsToPopulateSignHeaderAttributes = (self.signHeaderAttributes.count == 0);
+//    BOOL needsToPopulateSignHeaderAttributes = (self.signHeaderAttributes.count == 0);
 
     // Current Day Header
     NSIndexPath *currentDayHeaderIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -187,14 +187,12 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
     currentDayHeaderAttributes.frame = CGRectZero;
     
     // Sign Header
-    if (needsToPopulateSignHeaderAttributes) {
-        
-        CGFloat signHeaderMinY = self.stickySignHeader ? MAX(self.collectionView.contentOffset.y, 0) : 0;
-        NSIndexPath * signHeaderIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        UICollectionViewLayoutAttributes * signHeaderAttributes = [self layoutAttributesForDecorationViewAtIndexPath:signHeaderIndexPath ofKind:HLLCollectionElementKindSignHeader withItemCache:self.signHeaderAttributes];
-        signHeaderAttributes.frame = CGRectMake(0, signHeaderMinY, self.collectionView.bounds.size.width, self.signHeaderHeight);
-        signHeaderAttributes.zIndex = [self zIndexForElementKind:HLLCollectionElementKindSignHeader];
-    }
+    CGFloat signHeaderMinY = self.stickySignHeader ? MAX(self.collectionView.contentOffset.y, 0) : 0;
+    NSIndexPath * signHeaderIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    UICollectionViewLayoutAttributes * signHeaderAttributes = [self layoutAttributesForDecorationViewAtIndexPath:signHeaderIndexPath ofKind:HLLCollectionElementKindSignHeader withItemCache:self.signHeaderAttributes];
+    signHeaderAttributes.frame = CGRectMake(0, signHeaderMinY, self.collectionView.bounds.size.width, self.signHeaderHeight);
+    signHeaderAttributes.zIndex = [self zIndexForElementKind:HLLCollectionElementKindSignHeader];
+
     
     CGFloat calendarGridMinX = (self.dayRowHeaderWidth + self.contentMargin.left);
     CGFloat calendarGridWidth = (self.collectionViewContentSize.width - 0);
@@ -204,7 +202,7 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
         
         // Commom data
         CGFloat columnMinY = (section == 0) ? 0.0 : [self stackedSectionHeightUpToSection:section] - margin * section;// 获取当前section的最小y
-        if (!needsToPopulateSignHeaderAttributes)  columnMinY += self.signHeaderHeight;
+        columnMinY += self.signHeaderHeight;// some bug here
 
         CGFloat calendarGridMinY = (columnMinY + self.contentMargin.top);
         NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];

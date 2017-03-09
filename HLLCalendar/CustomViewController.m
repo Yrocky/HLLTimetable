@@ -45,6 +45,7 @@ NSString * const DayRowHeaderReuseIdentifier = @"DayRowHeaderReuseIdentifier";
     self.layout.delegate = self;
     self.layout.dayRowHeaderWidth = 120;
     self.layout.signHeaderHeight = 60;
+    self.layout.stickySignHeader = YES;
     self.layout.contentMargin = UIEdgeInsetsZero;
     self.layout.sectionMargin = UIEdgeInsetsZero;
     
