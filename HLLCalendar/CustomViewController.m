@@ -28,6 +28,10 @@ NSString * const DayRowHeaderReuseIdentifier = @"DayRowHeaderReuseIdentifier";
 @property (nonatomic ,strong) HLLCollectionViewCalendarLayout * layout;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (nonatomic ,strong) NSArray * weekDays;
+@property (nonatomic ,assign) NSInteger todayIndexAtCurrentWeek;
+
 @end
 
 @implementation CustomViewController
@@ -38,13 +42,16 @@ NSString * const DayRowHeaderReuseIdentifier = @"DayRowHeaderReuseIdentifier";
     
     [self tempEventData];
     
+    self.weekDays = [HLLWeekDay weekDays];
+    self.todayIndexAtCurrentWeek = [HLLWeekDay todayIndex];
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     // config layout
     self.layout = [[HLLCollectionViewCalendarLayout alloc] init];
     self.layout.delegate = self;
     self.layout.dayRowHeaderWidth = 120;
-    self.layout.signHeaderHeight = 60;
+    self.layout.signHeaderHeight = 50;
     self.layout.stickySignHeader = YES;
     self.layout.contentMargin = UIEdgeInsetsZero;
     self.layout.sectionMargin = UIEdgeInsetsZero;
@@ -92,7 +99,7 @@ NSString * const DayRowHeaderReuseIdentifier = @"DayRowHeaderReuseIdentifier";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return [HLLWeekDay weekDays].count;
+    return 7;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -119,7 +126,7 @@ NSString * const DayRowHeaderReuseIdentifier = @"DayRowHeaderReuseIdentifier";
     if (kind == HLLCollectionElementKindDayRowHeader) {
         HLLDayRowHeader *dayRowHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:DayRowHeaderReuseIdentifier forIndexPath:indexPath];
         
-        [dayRowHeader config:[HLLWeekDay weekDays][indexPath.section]];
+        [dayRowHeader config:self.weekDays[indexPath.section]];
         
         view = dayRowHeader;
     }
@@ -136,7 +143,7 @@ NSString * const DayRowHeaderReuseIdentifier = @"DayRowHeaderReuseIdentifier";
 
 - (NSInteger)currentDayIndex{
 
-    return [HLLWeekDay todayIndex];
+    return self.todayIndexAtCurrentWeek;
 }
 
 

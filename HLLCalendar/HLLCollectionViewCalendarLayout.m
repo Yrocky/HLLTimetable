@@ -16,8 +16,6 @@ NSString * const HLLCollectionElementKindVerticalGridline = @"HLLCollectionEleme
 NSString * const HLLCollectionElementKindHorizontalGridline = @"HLLCollectionElementKindHorizontalGridline";
 
 NSUInteger const HLLCollectionMinOverlayZ = 1000.0; // Allows for 900 items in a section without z overlap issues
-NSUInteger const HLLCollectionMinCellZ = 100.0;  // Allows for 100 items in a section's background
-NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
 
 @interface HLLCollectionViewCalendarLayout ()
 
@@ -149,6 +147,7 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
     [super prepareLayout];
     
     if (self.needsToPopulateAttributesForAllSections) {
+
         [self prepareSectionLayoutForSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self.collectionView.numberOfSections)]];
         self.needsToPopulateAttributesForAllSections = NO;
     }
@@ -178,7 +177,7 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
     BOOL needsToPopulateHorizontalGridlineAttributes = (self.horizontalGridlineAttributes.count == 0);
     BOOL needsToPopulateVerticalGridlineAttributes = (self.verticalGridlineAttributes.count == 0);
     BOOL needsToPopulateRowHeaderGridlineAttributes = (self.dayRowHeaderGridlineAttributes.count == 0);
-//    BOOL needsToPopulateSignHeaderAttributes = (self.signHeaderAttributes.count == 0);
+    BOOL needsToPopulateSignHeaderAttributes = (self.signHeaderAttributes.count == 0);
 
     // Current Day Header
     NSIndexPath *currentDayHeaderIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -193,7 +192,6 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
     signHeaderAttributes.frame = CGRectMake(0, signHeaderMinY, self.collectionView.bounds.size.width, self.signHeaderHeight);
     signHeaderAttributes.zIndex = [self zIndexForElementKind:HLLCollectionElementKindSignHeader];
 
-    
     CGFloat calendarGridMinX = (self.dayRowHeaderWidth + self.contentMargin.left);
     CGFloat calendarGridWidth = (self.collectionViewContentSize.width - 0);
     
@@ -202,14 +200,17 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
         
         // Commom data
         CGFloat columnMinY = (section == 0) ? 0.0 : [self stackedSectionHeightUpToSection:section] - margin * section;// 获取当前section的最小y
-        columnMinY += self.signHeaderHeight;// some bug here
-
+        columnMinY += self.signHeaderHeight;
+        
         CGFloat calendarGridMinY = (columnMinY + self.contentMargin.top);
         NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:section];
         
         CGFloat baseX = (self.sectionMargin.left + self.cellMargin.left) + self.dayRowHeaderWidth;
         CGFloat baseY = self.cellMargin.top + calendarGridMinY;
         
+        if (needsToPopulateSignHeaderAttributes) {
+            
+        }
         // Day Row Header
         NSIndexPath *dayRowHeaderIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
         UICollectionViewLayoutAttributes *dayRowHeaderAttributes = [self layoutAttributesForSupplementaryViewAtIndexPath:dayRowHeaderIndexPath ofKind:HLLCollectionElementKindDayRowHeader withItemCache:self.dayRowHeaderAttributes];
@@ -275,6 +276,7 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
                 
                 NSIndexPath *verticalGridlineIndexPath = [NSIndexPath indexPathForItem:verticalGridlineIndex inSection:section];
                 UICollectionViewLayoutAttributes *horizontalGridlineAttributes = [self layoutAttributesForDecorationViewAtIndexPath:verticalGridlineIndexPath ofKind:HLLCollectionElementKindVerticalGridline withItemCache:self.verticalGridlineAttributes];
+                
                 // Frame
                 CGFloat verticalGridlineMinY = baseY;
                 CGFloat verticalGridlineMinX = baseX + itemCommomWidth * verticalGridlineIndex;
@@ -450,9 +452,7 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
 /** 计算整个CollectionView的堆叠高度 */
 - (CGFloat)stackedSectionHeight
 {
-    BOOL needsToPopulateSignHeaderAttributes = (self.signHeaderAttributes.count != 0);
-    
-    return [self stackedSectionHeightUpToSection:self.collectionView.numberOfSections] + (needsToPopulateSignHeaderAttributes ? self.signHeaderHeight : 0);
+    return [self stackedSectionHeightUpToSection:self.collectionView.numberOfSections] + self.signHeaderHeight;
 }
 /** 计算upToSection之前的所有section的堆叠高度 */
 - (CGFloat)stackedSectionHeightUpToSection:(NSInteger)upToSection
@@ -460,7 +460,8 @@ NSUInteger const HLLCollectionMinBackgroundZ = 0.0;
     if (self.cachedColumnHeights[@(upToSection)]) {
         return [self.cachedColumnHeights[@(upToSection)] integerValue];
     }
-    CGFloat stackedSectionHeight = 0.0;
+
+    CGFloat stackedSectionHeight = 0;
     for (NSInteger section = 0; section < upToSection; section++) {// 遍历该section以前的所有的section，将以前的section的cell高度叠加
         CGFloat sectionColumnHeight = [self sectionHeight:section];
         stackedSectionHeight += sectionColumnHeight;

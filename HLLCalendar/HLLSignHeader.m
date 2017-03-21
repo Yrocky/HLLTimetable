@@ -44,7 +44,7 @@
         
         self.amLabel = [UILabel new];
         self.amLabel.text = @"上午";
-        self.amLabel.font = [UIFont systemFontOfSize:17];
+        self.amLabel.font = [UIFont systemFontOfSize:15];
         self.amLabel.textColor = [UIColor whiteColor];
         self.amLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.amLabel];
@@ -55,7 +55,7 @@
         
         self.pmLabel = [UILabel new];
         self.pmLabel.text = @"下午";
-        self.pmLabel.font = [UIFont systemFontOfSize:17];
+        self.pmLabel.font = [UIFont systemFontOfSize:15];
         self.pmLabel.textColor = [UIColor whiteColor];
         self.pmLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.pmLabel];
@@ -104,9 +104,9 @@
     
     [self.rightSepLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.amLabel.mas_right);
-        make.top.mas_equalTo(self.amLabel.mas_top).mas_offset(20);
+        make.top.mas_equalTo(self.amLabel.mas_top).mas_offset(10);
         make.width.mas_equalTo(self.leftSepLineView.mas_width);
-        make.bottom.mas_equalTo(self.amLabel.mas_bottom).mas_offset(-20);
+        make.bottom.mas_equalTo(self.amLabel.mas_bottom).mas_offset(-10);
     }];
     
     [self.pmLabel mas_makeConstraints:^(MASConstraintMaker *make){

@@ -35,6 +35,7 @@
 		D73714461E718329005B0807 /* UIColor+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Common.m"; sourceTree = "<group>"; };
 		D73714481E718455005B0807 /* NSDate+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Common.h"; sourceTree = "<group>"; };
 		D73714491E718455005B0807 /* NSDate+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Common.m"; sourceTree = "<group>"; };
+		D759A1441E80D8D9006346DB /* HLLCalendar.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = HLLCalendar.profdata; sourceTree = "<group>"; };
 		D768D1091E7033CC0079CBA6 /* HLLCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLLCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D768D10D1E7033CC0079CBA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D768D10F1E7033CC0079CBA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +109,14 @@
 			name = layout;
 			sourceTree = "<group>";
 		};
+		D759A1431E80D8D9006346DB /* OptimizationProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				D759A1441E80D8D9006346DB /* HLLCalendar.profdata */,
+			);
+			path = OptimizationProfiles;
+			sourceTree = "<group>";
+		};
 		D768D1001E7033CC0079CBA6 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +124,7 @@
 				D768D10A1E7033CC0079CBA6 /* Products */,
 				E5AC2BAAF824AC6B3CC10F56 /* Pods */,
 				0DCF8C3A127EFA81FBCEBBE6 /* Frameworks */,
+				D759A1431E80D8D9006346DB /* OptimizationProfiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,7 +224,7 @@
 				TargetAttributes = {
 					D768D1081E7033CC0079CBA6 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F7S5K3LZ8Z;
+						DevelopmentTeam = XEP6E77S6V;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -435,7 +445,8 @@
 			baseConfigurationReference = 098367B8784A694453FAD970 /* Pods-HLLCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F7S5K3LZ8Z;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				DEVELOPMENT_TEAM = XEP6E77S6V;
 				INFOPLIST_FILE = HLLCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yrocky.HLLCalendar;
@@ -448,7 +459,8 @@
 			baseConfigurationReference = 11E4F87A15E45780C5439157 /* Pods-HLLCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F7S5K3LZ8Z;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				DEVELOPMENT_TEAM = XEP6E77S6V;
 				INFOPLIST_FILE = HLLCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yrocky.HLLCalendar;
